@@ -79,13 +79,24 @@ class App extends Component {
   render() {
     return (
       <div className="all">
-      <Container>
+      <Container id="containerId">
         <Title />
+        <div className="row">
+          <div className="newRestaurantForm">
+            <NewRestaurant
+              value={this.state.value}
+              onSubmit={this.addRestaurant}
+              onChange={this.handleChange}
+            />
+          </div>
+        </div>   
+
         <div className="row">
           <div className="col">
             <h3>Not Visited Restaurants</h3>
              {this.state.restaurants.map( restaurants => { return !restaurants.visited ?
               <NotVisited 
+                className="notVisitedCards"
                 key={restaurants.key}
                 id={restaurants.id}
                 name={restaurants.name}
@@ -111,7 +122,7 @@ class App extends Component {
           </div>
         </div>    
         <br></br> 
-        <div className="row">
+        {/* <div className="row">
           <div className="col">
             <NewRestaurant
               value={this.state.value}
@@ -119,7 +130,7 @@ class App extends Component {
               onChange={this.handleChange}
             />
           </div>
-        </div>         
+        </div>          */}
          
       </Container> 
        </div> 

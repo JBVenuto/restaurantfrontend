@@ -4,7 +4,9 @@ import React from "react";
 const Visited = (props) => (
     <div className="card">
         <div className="card-body">
-           <span> 
+           <span
+                id="cardVisitedText"
+           > 
                 {props.name}
            </span>
         </div>

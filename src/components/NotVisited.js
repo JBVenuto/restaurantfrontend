@@ -1,9 +1,10 @@
 import React from "react";
 
 const NotVisited = (props) => (
-    <div className="card">
+    <div className="card" id="notVisitedCards">
         <div className="card-body">
             <span
+                id="cardBodyText"
                 key={props.key}
             >
                 {props.name}

@@ -4,7 +4,8 @@ const NewRestaurant = (props) => (
     <form onSubmit={props.onSubmit}>
         <input 
             type="text" 
-            name="newRestaurantName"  
+            name="newRestaurantName" 
+            className="restaurantInput"
             value={props.value}
             onChange={props.onChange}
         />
