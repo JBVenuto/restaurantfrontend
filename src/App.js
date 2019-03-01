@@ -71,7 +71,6 @@ class App extends Component {
       headers: {'Content-type': 'application/x-www-form-urlencoded'},
       body: (newRestName)
     })
-
     // Update the restaurant list based on the database
     this.getRestaurants();
   }
