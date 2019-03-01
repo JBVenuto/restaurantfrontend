@@ -30,7 +30,7 @@ class App extends Component {
 
   // Function to get the restaurants and set them to the state
   getRestaurants () {
-    fetch('/api/restaurants')
+    fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants')
     .then(res => res.json())
     .then(res => this.setState({ restaurants: res.data }))    
   }
