@@ -42,7 +42,7 @@ class App extends Component {
     console.log(Number.isInteger(event.target.getAttribute('restnum')));
     console.log(Number.isInteger(restid));
     console.log(event.target.className);
-    fetch(`/api/restaurants/${restid}`);
+    fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/${restid}`);
 
     // Change visited status
     let changeRestaurants = this.state.restaurants;
@@ -66,7 +66,7 @@ class App extends Component {
     console.log(event);
     let newRestName = this.state.restaurantName;
     event.preventDefault();
-    fetch('/api/restaurants/create', {
+    fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
       method: 'POST',
       headers: {'Content-type': 'application/x-www-form-urlencoded'},
       body: (newRestName)
