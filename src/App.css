@@ -27,7 +27,14 @@
   margin-bottom: 10px;
 }
 .restaurantInput {
-  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 300px;
+}
+#btn-submit {
+  width: 110px;
+  margin-left: 95px;
+  /* justify-content: center; */
+  /* float: right; */
 }
 
 h3 {

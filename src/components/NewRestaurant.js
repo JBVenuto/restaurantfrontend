@@ -8,10 +8,11 @@ const NewRestaurant = (props) => (
             className="restaurantInput"
             value={props.value}
             onChange={props.onChange}
-        />
+        /><br></br>
         <input 
             type="submit" 
             className="btn btn-secondary"
+            id="btn-submit"
             onClick={props.onClick}
             value="Add Restaurant"
         />
