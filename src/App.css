@@ -59,3 +59,7 @@ h3 {
 #visit-button {
   float: right;
 } 
+
+.modalBody {
+  background-color: white;  
+}

@@ -8,6 +8,7 @@ import Title from "./components/Title";
 import NotVisited from "./components/NotVisited";
 import Visited from "./components/Visited";
 import NewRestaurant from "./components/NewRestaurant";
+import Modal from "./components/Modal";
 
 class App extends Component {
   // Constructor to give state to the component.
@@ -15,7 +16,8 @@ class App extends Component {
     super(props);
     this.state = {
       restaurants: [],
-      restaurantName: ''
+      restaurantName: '',
+      modalVisible: true
     };
 
     // Bind the functions that will be used in the app
@@ -53,6 +55,17 @@ class App extends Component {
     console.log(changeRestaurants);
 
     this.setState({ restaurants: changeRestaurants });
+
+    // Open modal to rate restaurant
+    let modalVisible = !this.state.modalVisible;
+    this.setState ({ modalVisible: modalVisible});
+  }
+
+  rateRestaurant = event => {
+    if (this.state.modalVisible) {
+      return <Modal />;
+    }
+    else return <div></div>;
   }
 
   handleChange = event => {
@@ -121,17 +134,13 @@ class App extends Component {
           </div>
         </div>    
         <br></br> 
-        {/* <div className="row">
-          <div className="col">
-            <NewRestaurant
-              value={this.state.value}
-              onSubmit={this.addRestaurant}
-              onChange={this.handleChange}
-            />
-          </div>
-        </div>          */}
+        </Container> 
+
+        <this.rateRestaurant 
+          visible={this.state.modalVisible}
+        />
          
-      </Container> 
+      {/* </Container>  */}
        </div> 
     )
   }
