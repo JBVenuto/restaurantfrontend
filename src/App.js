@@ -17,13 +17,15 @@ class App extends Component {
     this.state = {
       restaurants: [],
       restaurantName: '',
-      modalVisible: true
+      justVisited: 0,
+      modalVisible: false
     };
 
     // Bind the functions that will be used in the app
     this.visitRestaurant = this.visitRestaurant.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addRestaurant = this.addRestaurant.bind(this);
+    this.restaurantRated = this.restaurantRated.bind(this);
   }
 
   componentDidMount () {
@@ -40,6 +42,7 @@ class App extends Component {
   // Function to update the visited status of a restaurant
   visitRestaurant = event => {
     let restid = parseInt(event.target.getAttribute('restnum'));
+    console.log(`justVisited: ${this.state.justVisited}`);
     console.log(event.target);
     console.log(Number.isInteger(event.target.getAttribute('restnum')));
     console.log(Number.isInteger(restid));
@@ -50,7 +53,8 @@ class App extends Component {
     let changeRestaurants = this.state.restaurants;
     console.log(changeRestaurants);
     let restIndex = changeRestaurants.map(function(x) {return x.id; }).indexOf(restid);
-    console.log(restIndex);
+    this.setState ({ justVisited: restIndex });
+    console.log(`restaurant index is ${restIndex}`);
     changeRestaurants[restIndex].visited = 1;
     console.log(changeRestaurants);
 
@@ -61,9 +65,22 @@ class App extends Component {
     this.setState ({ modalVisible: modalVisible});
   }
 
+  restaurantRated = event =>{
+    console.log(event.target.getAttribute('value'));
+
+    // Change the visibility of the modal
+    let modalVisible = !this.state.modalVisible;
+    this.setState ({ modalVisible: modalVisible});
+  }
+
   rateRestaurant = event => {
     if (this.state.modalVisible) {
-      return <Modal />;
+      return <Modal 
+        visible={this.state.modalVisible}
+        onClick={this.restaurantRated}
+        visitedRestaurant={this.state.restaurants[this.state.justVisited].name}
+        restIndex={this.state.justVisited}
+      />;
     }
     else return <div></div>;
   }
@@ -137,7 +154,8 @@ class App extends Component {
         </Container> 
 
         <this.rateRestaurant 
-          visible={this.state.modalVisible}
+          // visible={this.state.modalVisible}
+          // onChange={this.restaurantRated}
         />
          
       {/* </Container>  */}
