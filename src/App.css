@@ -60,6 +60,10 @@ h3 {
   float: right;
 } 
 
+.returnChoice {
+  float: right;
+}
+
 .modalBackground {
   background-color: black;
   background-color: rgba(0,0,0,0.6);

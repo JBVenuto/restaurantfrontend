@@ -67,10 +67,16 @@ class App extends Component {
 
   restaurantRated = event =>{
     console.log(event.target.getAttribute('value'));
-    let tempValue = event.target.getAttribute('value');
+    let tempValue = parseInt(event.target.getAttribute('value'));
     let visitedId = this.state.restaurants[this.state.justVisited].id;
 
-    if (tempValue == 0) {
+    if (tempValue === 0) {
+      // Change the rating in the state if needed
+      let changeRating = this.state.restaurants;
+      changeRating[this.state.justVisited].visitAgain = 0;
+      this.setState ({ restaurants: changeRating });
+
+      // Change the rating in the database
       fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/rate/${visitedId}`);
     }
     // Change the visibility of the modal

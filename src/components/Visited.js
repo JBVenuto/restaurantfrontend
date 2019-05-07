@@ -9,6 +9,7 @@ const Visited = (props) => (
            > 
                 {props.name}
            </span>
+           <span className="returnChoice">Would you return? {props.visitAgain}</span>
         </div>
     </div> 
 );
