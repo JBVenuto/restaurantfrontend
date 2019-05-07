@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/restaurantfrontend/static/js/runtime~main.7a55840f.js"
   },
   {
-    "revision": "09a5ec358433c7077527",
-    "url": "/restaurantfrontend/static/js/main.09a5ec35.chunk.js"
+    "revision": "ce53866823f0662dab5d",
+    "url": "/restaurantfrontend/static/js/main.ce538668.chunk.js"
   },
   {
     "revision": "3f0b22993c54ddcf39f8",
     "url": "/restaurantfrontend/static/js/1.3f0b2299.chunk.js"
   },
   {
-    "revision": "09a5ec358433c7077527",
-    "url": "/restaurantfrontend/static/css/main.4b46bc3c.chunk.css"
+    "revision": "ce53866823f0662dab5d",
+    "url": "/restaurantfrontend/static/css/main.fe111ff4.chunk.css"
   },
   {
-    "revision": "da21e27a363c1467293d2c001ee84552",
+    "revision": "9f3f9be60c4afc3cbbd9ad3d57f4457d",
     "url": "/restaurantfrontend/index.html"
   }
 ];
