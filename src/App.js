@@ -34,6 +34,7 @@ class App extends Component {
 
   // Function to get the restaurants and set them to the state
   getRestaurants () {
+    // fetch('http://localhost:8080/api/restaurants')
     fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants')
     .then(res => res.json())
     .then(res => this.setState({ restaurants: res.data }))    
@@ -47,6 +48,7 @@ class App extends Component {
     console.log(Number.isInteger(event.target.getAttribute('restnum')));
     console.log(Number.isInteger(restid));
     console.log(event.target.className);
+    // fetch(`http://localhost:8080/api/restaurants/${restid}`);
     fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/${restid}`);
 
     // Change visited status
@@ -77,6 +79,7 @@ class App extends Component {
       this.setState ({ restaurants: changeRating });
 
       // Change the rating in the database
+      // fetch(`http://localhost:8080/api/restaurants/rate/${visitedId}`);
       fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/rate/${visitedId}`);
     }
     // Change the visibility of the modal
@@ -107,6 +110,7 @@ class App extends Component {
     console.log(event);
     let newRestName = this.state.restaurantName;
     event.preventDefault();
+    // fetch('http://localhost:8080/api/restaurants/create', {
     fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
       method: 'POST',
       headers: {'Content-type': 'application/x-www-form-urlencoded'},
