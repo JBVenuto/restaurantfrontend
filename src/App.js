@@ -35,9 +35,9 @@ class App extends Component {
   // Function to get the restaurants and set them to the state
   getRestaurants () {
     console.log('starting get restaurants')
-    fetch('http://localhost:8080/api/restaurants')
-    // fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants')
-    .then(res => console.log("made the fetch"))
+    // fetch('http://localhost:8080/api/restaurants')
+    fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants')
+    // .then(res => console.log("made the fetch"))
     .then(res => res.json())
     .then(res => this.setState({ restaurants: res.data }))  
     // .then(() => console.log(this.state.restaurants));  
@@ -51,8 +51,8 @@ class App extends Component {
     console.log(Number.isInteger(event.target.getAttribute('restnum')));
     console.log(Number.isInteger(restid));
     console.log(event.target.className);
-    fetch(`http://localhost:8080/api/restaurants/${restid}`);
-    // fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/${restid}`);
+    // fetch(`http://localhost:8080/api/restaurants/${restid}`);
+    fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/${restid}`);
 
     // Change visited status
     let changeRestaurants = this.state.restaurants;
@@ -82,8 +82,8 @@ class App extends Component {
       this.setState ({ restaurants: changeRating });
 
       // Change the rating in the database
-      fetch(`http://localhost:8080/api/restaurants/rate/${visitedId}`);
-      // fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/rate/${visitedId}`);
+      // fetch(`http://localhost:8080/api/restaurants/rate/${visitedId}`);
+      fetch(`https://infinite-thicket-79992.herokuapp.com/api/restaurants/rate/${visitedId}`);
     }
     // Change the visibility of the modal
     let modalVisible = !this.state.modalVisible;
@@ -113,8 +113,8 @@ class App extends Component {
     console.log(event);
     let newRestName = this.state.restaurantName;
     event.preventDefault();
-    fetch('http://localhost:8080/api/restaurants/create', {
-    // fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
+    // fetch('http://localhost:8080/api/restaurants/create', {
+    fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
       method: 'POST',
       headers: {'Content-type': 'application/x-www-form-urlencoded'},
       body: (newRestName)
