@@ -1,6 +1,7 @@
 .all {
-  background-image: url("./images/restaurantBackground3.jpg");
-  background-color: #474545;
+  background-color: rgba(0,0,0,0.6);
+  background-image: url("./images/restaurantBackground.jpg");
+  /* background-color: #474545; */
   max-width: 1920px;
   height: 1080px;
 
@@ -8,14 +9,14 @@
 
 .title h1 {
   text-align: center;
-  color: #e00000;
+  color: red;
   /* padding-top: 40px; */
   font-family: 'Laila', serif;
   font-size: 40px;
 }
 .title {
   text-align: center;
-  color: #e00000;
+  color: red;
   padding-top: 40px;
   font-family: 'Laila', serif;
   font-size: 20px;
@@ -38,7 +39,7 @@
 }
 
 h3 {
-  color: #e00000;
+  color: red;
   font-family: 'Laila', serif;
   text-align: center;
 }
