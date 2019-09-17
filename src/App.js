@@ -113,14 +113,19 @@ class App extends Component {
     console.log(event);
     let newRestName = this.state.restaurantName;
     event.preventDefault();
-    // fetch('http://localhost:8080/api/restaurants/create', {
-    fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
-      method: 'POST',
-      headers: {'Content-type': 'application/x-www-form-urlencoded'},
-      body: (newRestName)
-    })
-    // Update the restaurant list based on the database
-    this.getRestaurants();
+    if (newRestName){
+      // fetch('http://localhost:8080/api/restaurants/create', {
+      fetch('https://infinite-thicket-79992.herokuapp.com/api/restaurants/create', {
+        method: 'POST',
+        headers: {'Content-type': 'application/x-www-form-urlencoded'},
+        body: (newRestName)
+      })
+      // Update the restaurant list based on the database
+      this.getRestaurants();
+    }
+    else {
+      alert("Please insert a valid name");
+    }
   }
 
   render() {

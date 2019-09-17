@@ -9,14 +9,14 @@
 
 .title h1 {
   text-align: center;
-  color: red;
+  color: #E00000;
   /* padding-top: 40px; */
   font-family: 'Laila', serif;
   font-size: 40px;
 }
 .title {
   text-align: center;
-  color: red;
+  color: #E00000;
   padding-top: 40px;
   font-family: 'Laila', serif;
   font-size: 20px;
@@ -39,7 +39,7 @@
 }
 
 h3 {
-  color: red;
+  color: #E00000;
   font-family: 'Laila', serif;
   text-align: center;
 }

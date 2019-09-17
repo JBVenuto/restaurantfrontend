@@ -6,6 +6,7 @@ const NewRestaurant = (props) => (
             type="text" 
             name="newRestaurantName" 
             className="restaurantInput"
+            id="restaurantInput"
             value={props.value}
             onChange={props.onChange}
         /><br></br>
