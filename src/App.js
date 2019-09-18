@@ -104,6 +104,7 @@ class App extends Component {
 
   handleChange = event => {
     this.setState({ restaurantName: event.target.value });
+    console.log(event.target.value);
   }
 
   // Function to add a new restaurant to the list of not visited restaurants
@@ -122,6 +123,8 @@ class App extends Component {
       })
       // Update the restaurant list based on the database
       this.getRestaurants();
+      this.setState({ restaurantName: '' });
+
     }
     else {
       alert("Please insert a valid name");
@@ -136,7 +139,8 @@ class App extends Component {
         <div className="row">
           <div className="newRestaurantForm">
             <NewRestaurant
-              value={this.state.value}
+              // value={this.state.value}
+              value={this.state.restaurantName}
               onSubmit={this.addRestaurant}
               onChange={this.handleChange}
             />
